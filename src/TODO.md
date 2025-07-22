@@ -1,0 +1,5 @@
+- [ ] add arrows, along with further explanations:w
+- [ ] add transitions
+- [ ] add resizes
+- [ ] make it mobile friendly
+- [ ] add animations
