@@ -1,5 +1,5 @@
-- [ ] add arrows, along with further explanations:w
-- [ ] add transitions
-- [ ] add resizes
-- [ ] make it mobile friendly
-- [ ] add animations
+- [ ] mobile friendly
+- [x] add animations
+- [ ] add night mode
+- [x] add relationshop descriptions 
+- [x] add AI

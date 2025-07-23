@@ -1,19 +1,35 @@
-# Mineralink
+<p align="center">
+  <img src="public/mineralink-logo.png" alt="Mineralink Logo" width="200" height="200">
+</p>
 
-A beautiful interactive visualization of mineral and vitamin interactions in the human body.
+<h1 align="center">Mineralink</h1>
+
+Mineralink visualizes a "mineral wheel": a circular diagram showing how essential minerals and vitamins interact with each other.
+
+A **mineral wheel** is a visual tool used in nutrition science and functional medicine to illustrate the complex interactions between essential minerals (and often vitamins) in the human body. It is typically presented as a circular diagram where:
+
+- **Each node** on the wheel represents a mineral (like calcium, magnesium, zinc, etc.) or sometimes a vitamin:
+  - **Synergistic** (helpful/cooperative): Nutrients that enhance each other's absorption or function. For example, Vitamin D helps the body absorb calcium.
+  - **Antagonistic** (inhibitory/competitive): Nutrients that can interfere with each other's absorption or function. For example, excess calcium can inhibit the absorption of magnesium or iron.
+
+The wheel helps quickly see which nutrients work together and which may compete, making it easier to understand how dietary choices or supplements might affect overall mineral balance.
+
+This concept is inspired by educational tools used in nutrition and functional medicine to help understand the complex interplay between micronutrients.
+
+**Data Source:**
+- The information in Mineralink is a simplified model for educational and visualization purposes, not a substitute for professional dietary advice.
+
 
 ## Features
 - **Mineral Interaction Wheel:** Visualize minerals and vitamins as nodes on a circular wheel.
 - **Synergistic & Antagonistic Relationships:** Click any mineral/vitamin to see which others enhance (synergistic) or inhibit (antagonistic) its function.
-- **Color-coded Interactions:** Selected minerals are highlighted; antagonistic relationships are shown in red.
-- **Responsive UI:** Modern, mobile-friendly design using React and Tailwind CSS.
-- **Tooltips:** Hover over any mineral/vitamin to see a brief description.
+- **Color-coded Interactions:** Selected minerals are highlighted; antagonistic relationships are shown in red, while synergistic ones are shown in green.
 
 ## Getting Started
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (v16+ recommended)
-- [pnpm](https://pnpm.io/) (or use npm/yarn, but pnpm is recommended)
+- [Node.js](https://nodejs.org/) 
+- [pnpm](https://pnpm.io/) (or use npm/yarn)
 
 ### Installation
 
@@ -44,16 +60,8 @@ yarn dev
 
 Open [http://localhost:5173](http://localhost:5173) in your browser to view the app.
 
-## Project Structure
-
-- `src/App.tsx` — Main React component for the wheel UI
-- `src/domain/` — Domain logic, types, and transformation utilities for minerals and vitamins
-- `src/domain/mineral-utils.ts` — Functions for transforming and parsing mineral data
-- `src/domain/Mineral.ts` — Type definitions for minerals, vitamins, and relationships
-
 ## Customization
-- Add or edit minerals/vitamins and their relationships in the data source in `src/domain/mineral-utils.ts`.
-- Adjust styles in `src/App.css` or extend with Tailwind classes.
+Add or edit minerals/vitamins and their relationships in the data source in `src/domain/mineral-data.ts`, following the given model format.
 
 ## License
 MIT

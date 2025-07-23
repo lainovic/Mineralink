@@ -1,1 +1,46 @@
+/* @import "./reset.css"; not with Tailwind */
 @import "tailwindcss";
+
+/* Custom styles below */
+
+@keyframes gradient-move {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+.animated-gradient {
+    background: linear-gradient(
+      270deg,
+      #f8f6fa,   /* very light pink */
+      #f9f5e3,   /* very light orange/yellow */
+      #f6fae3,   /* very light yellow/green */
+      #e6f7f2,   /* very light green/blue */
+      #e6f0fa,   /* very light blue */
+      #eae6fa,   /* very light indigo/violet */
+      #f7e6fa,   /* very light magenta */
+      #f8f6fa,   /* repeat for smooth loop */
+      #f9f5e3,
+      #f6fae3,
+      #e6f7f2,
+      #e6f0fa,
+      #eae6fa,
+      #f7e6fa
+    );
+    background-size: 4000% 4000%;
+    animation: gradient-move 216s ease-in-out infinite;
+  }
+
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(-3deg) scale(1); }
+    20% { transform: rotate(3deg) scale(1.05); }
+    40% { transform: rotate(-3deg) scale(1.1); }
+    60% { transform: rotate(3deg) scale(1.05); }
+    80% { transform: rotate(-3deg) scale(1); }
+  }
+  .animate-wiggle {
+    animation: wiggle 0.7s ease-in-out infinite;
+  }

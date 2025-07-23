@@ -1,9 +1,7 @@
 import { mineralData } from "./mineral-data";
 import { mineralNameToSymbol, type Mineral, type MineralName, type MineralRelationship, type MineralSymbol } from "./Mineral";
 
-export const minerals: Map<MineralSymbol, Mineral> = toMinerals(mineralData);
-
-function toMinerals(mineralData: Record<MineralName, Object>): Map<MineralSymbol, Mineral> {
+function toMinerals(mineralData: Record<MineralName, Object>): Mineral[] {
   const mineralObjects = Object.values(mineralData);
   const mineralValues = mineralObjects.map((obj: any) => ({
     name: obj.name as MineralName,
@@ -14,18 +12,18 @@ function toMinerals(mineralData: Record<MineralName, Object>): Map<MineralSymbol
     category: obj.category || undefined,
   }));
 
-  return new Map(mineralValues.map(m => [m.symbol, m]));
+  return mineralValues;
 }
 
 function getSynergies(obj: any): MineralRelationship[] {
-  return (obj.synergistic || []).map((synergy: string) => {
-      return extractRelationship(synergy);
+  return (obj.synergistic || []).map((synergist: string) => {
+      return extractRelationship(synergist);
     });
 }
 
 function getAntagonies(obj: any): MineralRelationship[] {
-  return (obj.antagonistic || []).map((antagony: string) => {
-    return extractRelationship(antagony);
+  return (obj.antagonistic || []).map((antagonist: string) => {
+    return extractRelationship(antagonist);
   });
 }
 
@@ -51,3 +49,6 @@ function extractRelationship(text: string): MineralRelationship {
     description: descStr || undefined,
   };
 }
+
+export const minerals: Mineral[] = toMinerals(mineralData);
+export const mineralMap: Map<MineralSymbol, Mineral> = new Map(minerals.map(m => [m.symbol, m]));

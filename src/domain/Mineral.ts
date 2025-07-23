@@ -26,10 +26,11 @@ export type MineralSymbol =
   | "Se"
   | "Mo"
   | "P"
-  | "D"
-  | "C"
-  | "A"
-  | "E"
+  | "Vit A"
+  | "Vit C"
+  | "Vit D"
+  | "Vit E"
+  | "Vit K"
   | "B6"
   | "K"
   | "Na"
@@ -59,12 +60,12 @@ export type Mineral = {
     Selenium: 'Se',
     Molybdenum: 'Mo',
     Phosphorus: 'P',
-    'Vitamin A': 'A',
     'Vitamin B6': 'B6',
-    'Vitamin C': 'C',
-    'Vitamin D': 'D',
-    'Vitamin E': 'E',
-    'Vitamin K': 'K',
+    'Vitamin A': 'Vit A',
+    'Vitamin C': 'Vit C',
+    'Vitamin D': 'Vit D',
+    'Vitamin E': 'Vit E',
+    'Vitamin K': 'Vit K',
     Potassium: 'K',
     Sodium: 'Na',
     Sulfur: 'S',
