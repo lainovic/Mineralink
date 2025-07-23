@@ -10,7 +10,7 @@ import ReactMarkdown from "react-markdown";
 
 function App() {
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-  
+
   const [selectedMineralSymbol, setSelectedMineralSymbol] =
     React.useState<MineralSymbol | null>(null); // No mineral selected initially
   const wheelRef = React.useRef<HTMLDivElement>(null);
@@ -113,7 +113,9 @@ function App() {
     if (!selectedMineral) return;
 
     if (!apiKey) {
-      setLlmResponse("Error: API key not configured. Please check your environment variables.");
+      setLlmResponse(
+        "Error: API key not configured. Please check your environment variables."
+      );
       return;
     }
 
@@ -131,9 +133,9 @@ function App() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      
+
       const result = await response.json();
-      
+
       if (response.ok) {
         if (
           result.candidates &&
@@ -148,7 +150,9 @@ function App() {
           console.error("Unexpected LLM response structure:", result);
         }
       } else {
-        setLlmResponse(`API Error: ${result.error?.message || 'Unknown error'}`);
+        setLlmResponse(
+          `API Error: ${result.error?.message || "Unknown error"}`
+        );
         console.error("API Error:", result);
       }
     } catch (error) {
@@ -165,7 +169,9 @@ function App() {
     if (!selectedMineral) return;
 
     if (!apiKey) {
-      setLlmResponse("Error: API key not configured. Please check your environment variables.");
+      setLlmResponse(
+        "Error: API key not configured. Please check your environment variables."
+      );
       return;
     }
 
@@ -183,9 +189,9 @@ function App() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      
+
       const result = await response.json();
-      
+
       if (response.ok) {
         if (
           result.candidates &&
@@ -200,7 +206,9 @@ function App() {
           console.error("Unexpected LLM response structure:", result);
         }
       } else {
-        setLlmResponse(`API Error: ${result.error?.message || 'Unknown error'}`);
+        setLlmResponse(
+          `API Error: ${result.error?.message || "Unknown error"}`
+        );
         console.error("API Error:", result);
       }
     } catch (error) {
@@ -375,7 +383,10 @@ function App() {
                       </h3>
                       <ul className="space-y-1 text-left">
                         {selectedMineral.synergistic.map((rel) => (
-                          <li key={rel.symbol} className="text-green-800 hover:bg-green-100/60 rounded px-2 transition">
+                          <li
+                            key={rel.symbol}
+                            className="text-green-800 hover:bg-green-100/60 rounded px-2 transition"
+                          >
                             <span className="font-bold">{rel.symbol}</span>
                             {rel.description && (
                               <span className="ml-2 text-sm text-green-600">
@@ -394,7 +405,10 @@ function App() {
                       </h3>
                       <ul className="space-y-1 text-left">
                         {selectedMineral.antagonistic.map((rel) => (
-                          <li key={rel.symbol} className="text-red-800 hover:bg-red-100/60 rounded px-2 transition">
+                          <li
+                            key={rel.symbol}
+                            className="text-red-800 hover:bg-red-100/60 rounded px-2 transition"
+                          >
                             <span className="font-bold">{rel.symbol}</span>
                             {rel.description && (
                               <span className="ml-2 text-sm text-red-600">
@@ -433,6 +447,7 @@ function App() {
             <>
               <h1
                 className="
+    fas
     text-4xl
     font-extrabold
     text-center
@@ -449,7 +464,7 @@ function App() {
               >
                 MineraLink
               </h1>
-              <p>Select a mineral to see details.</p>
+              <p className="">Select a mineral to see details.</p>
             </>
           )}
         </div>
